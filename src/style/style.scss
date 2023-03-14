@@ -1,0 +1,17 @@
+.btn{
+    &:focus{
+        box-shadow: none !important;
+        outline: none !important;
+    }
+}
+.header{
+    background-color: #f5f6fa;
+    .cart-btn{
+        &:hover{
+            .cart-item{
+                background-color:white !important;
+                color: var(--bs-green) !important;
+            }
+        }
+    }
+}
