@@ -21,13 +21,14 @@ const HeaderComponent = () => {
                             <h4>My Online Shopping Site</h4>
                         </div>
                         <div className="col-3">
-                            <button onClick={() => setShow(true)} className="cart-btn btn btn-outline-success">My Cart <span className="cart-item badge bg-success">{quantity}</span></button>
+                            <button  data-testid="button" onClick={() => setShow(true)} className="cart-btn btn btn-outline-success">My Cart <span className="cart-item badge bg-success">{quantity}</span></button>
                         </div>
                     </div>
                 </div>
             </section>
             <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
+                <Modal.Header
+                  closeButton data-testid='close-btn'>
                     <Modal.Title>Your Shopping Cart</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
@@ -48,9 +49,9 @@ const HeaderComponent = () => {
                                                         <span>({data.price}/count)</span>
                                                     </div>
                                                     <div className="d-flex">
-                                                        <button onClick={()=>dispatch(addToCart(data))} className="btn btn-success">+</button>
-                                                        <button className="btn btn-white">{data.quantity}</button>
                                                         <button onClick={()=>dispatch(removeToCart(data))} className="btn btn-danger">-</button>
+                                                        <button className="btn btn-white">{data.quantity}</button>
+                                                        <button onClick={()=>dispatch(addToCart(data))} className="btn btn-success">+</button>
                                                     </div>
                                                 </div>
                                             </div>
